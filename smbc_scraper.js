@@ -44,9 +44,9 @@ function extractDatesFromOptions(html) {
   const options = doc.querySelectorAll('option');
   const dates = [];
   options.forEach(opt => {
-    const value = opt.getAttribute('value'); // например, "comic/2002-09-05"
+    const value = opt.getAttribute('value'); 
     if (value && value.startsWith('comic/')) {
-      const date = value.replace('comic/', ''); // "2002-09-05"
+      const date = value.replace('comic/', ''); 
       dates.push(date);
     }
   });
@@ -92,11 +92,7 @@ async function scrapeComic(date) {
 (async () => {
   console.log('🚀 Script started');
 
-  // Если у тебя есть HTML с <option> — например, прочитаем из файла options.html
-  // const optionsHtml = await fs.readFile(path.join(__dirname, 'options.html'), 'utf-8');
-  // const dates = extractDatesFromOptions(optionsHtml);
 
-  // Или можно просто вставить вручную, если у тебя маленький кусок html
   const optionsHtml = `
     <option value="comic/2002-09-05">September 5, 2002 - 2002-09-05</option>
     <option value="comic/2002-09-07">September 7, 2002 - 2002-09-07</option>
